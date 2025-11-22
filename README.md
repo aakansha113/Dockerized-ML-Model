@@ -128,7 +128,6 @@ docker run -p 8080:8000 ml-model:latest
   ```
   python -m uvicorn app.main:app --reload
   ```
-  works.
 - Docker image builds:
   ```
   docker build -t ml-model:latest .
