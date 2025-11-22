@@ -12,14 +12,14 @@ ml-docker-app/
 │── app/
 │ ├── main.py
 │ ├── requirements.txt
-
-## 1) Create project folder
+## Step-by-step Procedure:
+### 1) Create project folder
 ```
 $mkdir ml-docker-app
 
 $cd ml-docker-app
 ```
-## 2) Create virtual environment (optional, for local testing)
+### 2) Create virtual environment (optional, for local testing)
 ```
 $python3 -m venv .venv
 
@@ -27,10 +27,10 @@ $source .venv/bin/activate   # on Windows: .venv\Scripts\activate
 
 $pip install --upgrade pip
 ```
-## 3) Write script to train & save a model
+### 3) Write script to train & save a model
 
 Create save_model.py:
-# save_model.py 
+### save_model.py 
 And then Run:
 ```
 pip install scikit-learn
@@ -38,7 +38,7 @@ python save_model.py
 ```
 ### (should produce model.pkl)
 
-## 4) Create FastAPI app files
+### 4) Create FastAPI app files
 
 Make folder and files:
 ```
@@ -48,7 +48,7 @@ app/main.py
 
 app/requirements.txt
 
-## 5) Test locally (before Docker)
+### 5) Test locally (before Docker)
 
 Install requirements and run:
 ```
@@ -63,25 +63,30 @@ Open
  -send e.g. 
  ### { "features": [5.1,3.5,1.4,0.2] }).
 
-## 6) Add .dockerignore
+### 6) Add .dockerignore
 
 Create .dockerignore to keep image small:
-## 7) Create Dockerfile (multi-stage, small final size)
+### 7) Create Dockerfile (multi-stage, small final size)
 Dockerfile
 
 ###Notes:
 1- Uses python:3.10-slim to avoid the "Requires-Python >=3.10" pip issue.
 
 2- --workers 1 is safe for CPU-bound models; increase or use Gunicorn + Uvicorn worker for production.
-
-## 8) Build Docker image
+###                OR
+### 📥 Clone This Repository
+#### To clone this portfolio on your local system, run:
+```
+git clone https://github.com/aakansha113/my-portfolio.git
+```
+### 8) Build Docker image
 
 From project root:
 ```
 $docker build -t ml-model:latest .
 ```
 If you see pip errors about Python version, make sure Dockerfile base image is python:3.10-slim
-## 9) Run container locally
+### 9) Run container locally
 ```
 docker run --rm -p 8000:8000 --name ml-local ml-model:latest
 ```
@@ -124,4 +129,5 @@ docker run -p 8080:8000 ml-model:latest
 - API responds in container: `docker run -p 8000:8000 ml-model:latest`
 - Add healthcheck & restart policy before production deployment.
 
-
+### ⭐ Show Your Support
+#### If you like this portfolio, feel free to ⭐ star the repo!
