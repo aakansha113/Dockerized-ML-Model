@@ -15,17 +15,17 @@ ml-docker-app/
 ## Step-by-step Procedure:
 ### 1) Create project folder
 ```
-$mkdir ml-docker-app
+mkdir ml-docker-app
 
-$cd ml-docker-app
+cd ml-docker-app
 ```
 ### 2) Create virtual environment (optional, for local testing)
 ```
-$python3 -m venv .venv
+python3 -m venv .venv
 
-$source .venv/bin/activate   # on Windows: .venv\Scripts\activate
+source .venv/bin/activate   # on Windows: .venv\Scripts\activate
 
-$pip install --upgrade pip
+pip install --upgrade pip
 ```
 ### 3) Write script to train & save a model
 
@@ -52,9 +52,9 @@ app/requirements.txt
 
 Install requirements and run:
 ```
-$pip install -r app/requirements.txt
+pip install -r app/requirements.txt
 
-$python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 Open 
@@ -83,7 +83,7 @@ git clone https://github.com/aakansha113/my-portfolio.git
 
 From project root:
 ```
-$docker build -t ml-model:latest .
+docker build -t ml-model:latest .
 ```
 If you see pip errors about Python version, make sure Dockerfile base image is python:3.10-slim
 ### 9) Run container locally
