@@ -125,11 +125,18 @@ docker run -p 8080:8000 ml-model:latest
 ## ✅ Pre‑Deployment Checklist
 - `python save_model.py` → `model.pkl` must exist.
 - Local test:
-  ```python -m uvicorn app.main:app --reload``` works.
+  ```
+  python -m uvicorn app.main:app --reload
+  ```
+  works.
 - Docker image builds:
-  ```docker build -t ml-model:latest .```
+  ```
+  docker build -t ml-model:latest .
+  ```
 - API responds in container:
-  ```docker run -p 8000:8000 ml-model:latest```
+  ```
+  docker run -p 8000:8000 ml-model:latest
+  ```
 - Add healthcheck & restart policy before production deployment.
 
 ### ⭐ Show Your Support
