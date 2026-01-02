@@ -3,7 +3,7 @@
 This project demonstrates how to build, containerize, and run a Machine Learning model using FastAPI and Docker.
 
 ## 📁 Project Structure
-
+```
 ml-docker-app/
 │── model.pkl
 │── save_model.py
@@ -12,7 +12,7 @@ ml-docker-app/
 │── app/
 │ ├── main.py
 │ ├── requirements.txt
-
+```
 ## Step-by-step Procedure:
 ### 1) Create project folder
 ```
